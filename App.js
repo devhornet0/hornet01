@@ -1,13 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Header from './components/Header';
 
 export default function App() {
+  let contador = 0;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Olá Mundo!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <Header title="Header Param" />
+      <View style={styles.container}>
+        <Text style={styles.title}>Olá Mundo!</Text>
+        <TouchableOpacity style={styles.button}>
+          <Text>Pressione Aqui</Text>
+        </TouchableOpacity>
+        <Text>{contador} toques!</Text>
+        <StatusBar style="auto" />
+      </View>
+    </>
   );
 }
 
